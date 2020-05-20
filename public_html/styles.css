@@ -1,2 +1,9 @@
-/* This is overriding the bootstrap colors intentionally */
+/* This is overriding bootstrap */
 
+a {
+	color: black!important;
+}
+
+a:hover {
+	color: hotpink!important;
+}
