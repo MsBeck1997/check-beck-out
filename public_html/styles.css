@@ -2,15 +2,6 @@
 
 /* ------------------------- Global ------------------------- */
 
-/* Links override for colors */
-a, a:visited {
-	color: black;
-}
-
-a:hover {
-	color: #ff9e9e;
-}
-
 /* Font */
 body {
 	font-family: 'Dosis', sans-serif;
@@ -31,12 +22,37 @@ body {
 	font-size: 60px;
 }
 
+/* Fixes Navbar Spacing for icons and color */
+.navbar-nav a, a:visited {
+	padding: 0 1em;
+	color: #ff9e9e;
+}
+
+/* Hover Icon Color */
+.navbar-nav a:hover {
+	color: #ff8080;
+}
+
+.navbar-nav {
+	position: relative;
+	left: 88%;
+}
+
+/* Adds small bottom border */
+nav.navbar.navbar-expand-lg.navbar-light.background-Gray.mb-3 {
+	border-bottom: solid 2px pink;
+}
+
 /* ------------------------- Bubble Sections ------------------------- */
 
 /* Border color and thickness for Bubbles */
 div .BubbleBorder {
 	border-color: #ff9e9e!important;
 	border-width: 3px!important;
+}
+
+div .BubbleBorder:hover {
+	background-color: rgba(119, 129, 136, 10%);
 }
 
 .btn.focus, .btn:focus {
@@ -96,3 +112,4 @@ input#submit {
 	width: 20%;
 	margin-top: 1em;
 }
+
