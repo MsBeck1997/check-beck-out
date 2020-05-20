@@ -48,3 +48,36 @@ div .BubbleBorder {
 .background-Gray {
 	background-color: #778188!important;
 }
+
+
+/* ------------------------- Contact Form ------------------------- */
+
+/* Fixes Form Labels */
+label {
+	margin: 1em 0 0 0;
+}
+
+/* Fixes Form Spacing */
+input {
+	width: 100%;
+	padding: 12px 20px;
+	margin 8px 0;
+}
+
+/* Bigger box for Message */
+textarea {
+	width: 100%;
+	padding: 12px 20px;
+	margin 8px 0;
+	height: 150px;
+	resize: none;
+}
+
+/* Changes Submit Button */
+input#submit {
+	background-color: #ff9e9e;
+	border-color: #ff9e9e;
+	outline: 0;
+	width: 20%;
+	margin-top: 1em;
+}
