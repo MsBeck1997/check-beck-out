@@ -20,16 +20,23 @@ body {
 /* ------------------------- Navbar ------------------------- */
 
 /* Adds larger text size and thickness to header */
-nav {
+.navbar-brand {
 	font-family: 'Playfair Display', serif;
+	font-size: 60px;
+	font-weight: 500;
 }
 
+/* Resizes Icons */
+::before {
+	font-size: 60px;
+}
 
 /* ------------------------- Bubble Sections ------------------------- */
 
 /* Border color and thickness for Bubbles */
 div .BubbleBorder {
 	border-color: #ff9e9e!important;
+	border-width: 3px!important;
 }
 
 .btn.focus, .btn:focus {
