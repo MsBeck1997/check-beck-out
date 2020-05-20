@@ -1,9 +1,15 @@
 /* This is overriding bootstrap */
 
-a {
-	color: black!important;
+/* Links override for colors */
+a, a:visited {
+	color: black;
 }
 
 a:hover {
-	color: hotpink!important;
+	color: hotpink;
+}
+
+/* Border color and thickness for Bubble Section */
+div .BubbleBorder {
+	border-color: hotpink!important;
 }
