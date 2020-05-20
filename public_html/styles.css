@@ -1,15 +1,29 @@
 /* This is overriding bootstrap */
 
+/* ------------------------- Global ------------------------- */
+
 /* Links override for colors */
 a, a:visited {
 	color: black;
 }
 
 a:hover {
-	color: hotpink;
+	color: #FF83DE;
 }
 
-/* Border color and thickness for Bubble Section */
+
+/* ------------------------- Bubble Sections ------------------------- */
+
+/* Border color and thickness for Bubbles */
 div .BubbleBorder {
-	border-color: hotpink!important;
+	border-color: #FF83DE!important;
+}
+
+.btn.focus, .btn:focus {
+	outline: 0;
+	box-shadow: none;
+}
+
+.background-Gray {
+	background-color: #a6a6a6!important;
 }
