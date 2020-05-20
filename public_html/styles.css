@@ -8,15 +8,25 @@ a, a:visited {
 }
 
 a:hover {
-	color: #FF83DE;
+	color: #ff9e9e;
 }
+
+/* Font */
+body {
+	font-family: 'Playfair Display', serif;
+}
+
+
+/* ------------------------- Navbar ------------------------- */
+
+/* Adds larger text size and thickness to header */
 
 
 /* ------------------------- Bubble Sections ------------------------- */
 
 /* Border color and thickness for Bubbles */
 div .BubbleBorder {
-	border-color: #FF83DE!important;
+	border-color: #ff9e9e!important;
 }
 
 .btn.focus, .btn:focus {
@@ -24,6 +34,7 @@ div .BubbleBorder {
 	box-shadow: none;
 }
 
+/* Adds new background class color */
 .background-Gray {
-	background-color: #a6a6a6!important;
+	background-color: #778188!important;
 }
