@@ -49,6 +49,21 @@ div .BubbleBorder {
 	background-color: #778188!important;
 }
 
+/* ------------------------- Reference Quotes ------------------------- */
+div#carouselQuotesSlidesOnly {
+	margin: 0 5em;
+}
+
+h2.border-bottom {
+	padding: 0 0 10px 0;
+	border-bottom: 1px;
+	border-color: #ff9e9e!important;
+}
+
+.carousel-inner.border.border-secondary.text-center.my-5 {
+	border-width: 3px!important;
+	padding: 7em;
+}
 
 /* ------------------------- Contact Form ------------------------- */
 
