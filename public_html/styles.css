@@ -76,14 +76,14 @@ label {
 input {
 	width: 100%;
 	padding: 12px 20px;
-	margin 8px 0;
+	margin: 8px 0;
 }
 
 /* Bigger box for Message */
 textarea {
 	width: 100%;
 	padding: 12px 20px;
-	margin 8px 0;
+	margin: 8px 0;
 	height: 150px;
 	resize: none;
 }
