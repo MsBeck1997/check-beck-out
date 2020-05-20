@@ -13,13 +13,16 @@ a:hover {
 
 /* Font */
 body {
-	font-family: 'Playfair Display', serif;
+	font-family: 'Dosis', sans-serif;
 }
 
 
 /* ------------------------- Navbar ------------------------- */
 
 /* Adds larger text size and thickness to header */
+nav {
+	font-family: 'Playfair Display', serif;
+}
 
 
 /* ------------------------- Bubble Sections ------------------------- */
