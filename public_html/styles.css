@@ -7,6 +7,14 @@ body {
 	font-family: 'Dosis', sans-serif;
 }
 
+/* Adds new background class color */
+.background-Gray {
+	background-color: #778188!important;
+}
+
+.ButtonRoundingTop {
+	border-radius: 15px 15px 0 0;
+}
 
 /* ------------------------- Navbar ------------------------- */
 
@@ -51,19 +59,29 @@ div .BubbleBorder {
 	border-width: 3px!important;
 }
 
+/* Changes button on hover */
 div .BubbleBorder:hover {
 	background-color: rgba(119, 129, 136, 6%);
 	border-color: #ff8080!important;
 }
 
+/* Removes default outline from buttons */
 .btn.focus, .btn:focus {
 	outline: 0;
 	box-shadow: none;
 }
 
-/* Adds new background class color */
-.background-Gray {
+/* Changes color of button when selected */
+button.btn[aria-expanded="true"] {
+	color: white;
 	background-color: #778188!important;
+}
+
+/* Changes selected button hover */
+button.btn[aria-expanded="true"]:hover .BubbleBorder {
+	color: rgba(255, 255, 255, 75%);
+	background-color: #778188!important;
+	border-color: #ff8080!important;
 }
 
 /* ------------------------- Reference Quotes ------------------------- */
