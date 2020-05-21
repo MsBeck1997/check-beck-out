@@ -52,7 +52,8 @@ div .BubbleBorder {
 }
 
 div .BubbleBorder:hover {
-	background-color: rgba(119, 129, 136, 10%);
+	background-color: rgba(119, 129, 136, 6%);
+	border-color: #ff8080!important;
 }
 
 .btn.focus, .btn:focus {
@@ -81,7 +82,7 @@ h2.border-bottom {
 .carousel-inner.border.border-secondary.text-center.my-5 {
 	border-width: 3px!important;
 	padding: 7em;
-	border-radius: 25px;
+	border-radius: 15px;
 }
 
 /* Moving -whom text over to a good position */
