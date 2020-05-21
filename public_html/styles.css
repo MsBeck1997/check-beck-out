@@ -70,15 +70,23 @@ div#carouselQuotesSlidesOnly {
 	margin: 0 5em;
 }
 
+/* Colored border below Text */
 h2.border-bottom {
 	padding: 0 0 10px 0;
 	border-bottom: 1px;
 	border-color: #ff9e9e!important;
 }
 
+/* Border around Reference Block */
 .carousel-inner.border.border-secondary.text-center.my-5 {
 	border-width: 3px!important;
 	padding: 7em;
+	border-radius: 25px;
+}
+
+/* Moving -whom text over to a good position */
+h2.border-bottom.font-italic.text-right {
+	padding: 0 15em 0 0;
 }
 
 /* ------------------------- Contact Form ------------------------- */
