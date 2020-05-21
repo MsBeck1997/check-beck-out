@@ -140,3 +140,9 @@ input#submit {
 	width: 20%;
 	margin-top: 1em;
 }
+
+/* Changes Submit Button on Press */
+input#submit:active {
+	background-color: #ff8080;
+	border-color: #ff8080;
+}
