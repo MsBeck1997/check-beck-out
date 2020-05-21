@@ -12,6 +12,7 @@ body {
 	background-color: #778188!important;
 }
 
+/* Adds functionality to round buttons only on the top. Used in Bubble Sections */
 .ButtonRoundingTop {
 	border-radius: 15px 15px 0 0;
 }
@@ -139,4 +140,3 @@ input#submit {
 	width: 20%;
 	margin-top: 1em;
 }
-
