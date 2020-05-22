@@ -83,48 +83,48 @@
 </div>
 
 <!-- Bubble Sections -->
-<div class="container">
-    <div class="card-deck mx-4" id="accordion">
-        <div class="card border-0 px-5 pt-5" id="about">
+<div class="container-fluid">
+    <div class="row text-center mx-5 px-5" id="accordion">
+        <div class="col-md border-0 pt-5" id="about">
             <button class="btn bg-white ButtonRoundingTop" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <div class="card-body border rounded-circle BubbleBorder">
+                <div class="border rounded-circle p-3 BubbleBorder">
                     <i class="fas fa-user fa-5x m-2"></i>
-                    <h5 class="card-title text-center mt-3">About</h5>
+                    <h5 class="text-center my-3 px-5">About</h5>
                 </div>
             </button>
         </div>
 
-        <div class="card border-0 px-5 pt-5" id="portfolio">
+        <div class="col-md border-0 pt-5" id="portfolio">
             <button class="btn bg-white ButtonRoundingTop" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                <div class="card-body border rounded-circle BubbleBorder">
+                <div class="border rounded-circle p-3 BubbleBorder">
                     <i class="fas fa fa-laptop-code fa-5x m-2"></i>
-                    <h5 class="card-title text-center mt-3">Portfolio</h5>
+                    <h5 class="text-center my-3 px-5">Portfolio</h5>
                 </div>
             </button>
         </div>
 
-        <div class="card border-0 px-5 pt-5" id="resume">
+        <div class="col-md border-0 pt-5" id="resume">
             <button class="btn bg-white ButtonRoundingTop" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <div class="card-body border rounded-circle BubbleBorder">
+                <div class="border rounded-circle p-3 BubbleBorder">
                     <i class="fas fa fa-briefcase fa-5x m-2"></i>
-                    <h5 class="card-title text-center mt-3">R&#233;sum&#233;</h5>
+                    <h5 class="text-center my-3 px-5">R&#233;sum&#233;</h5>
                 </div>
             </button>
         </div>
+
     </div>
 </div>
 
 <div class="container-fluid" id="inner-bubble-text">
-    <div class="row">
 
         <div id="collapseOne" class="collapse" aria-labelledby="about" data-parent="#inner-bubble-text">
-             <div class="card-body background-Gray text-white">
-                <div class="row py-3">
-                    <div class="col-4">
+             <div class="background-Gray text-white">
+                <div class="row py-4">
+                    <div class="col-3 offset-1">
                         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsociology.nd.edu%2Fassets%2F202818%2Ffullsize%2Fplaceholder_copy_4.png&f=1&nofb=1"
                              class="img-fluid" alt="placeholder image">
                     </div>
-                    <div class="col-8 ml-auto">
+                    <div class="col-6 offset-1">
                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
                         squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
                         nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
@@ -138,9 +138,8 @@
         </div>
 
         <div id="collapseTwo" class="collapse show" aria-labelledby="portfolio" data-parent="#inner-bubble-text">
-            <div class="card-body background-Gray text-white">
-
-                <div class="row py-3">
+            <div class="background-Gray text-white">
+                <div class="row py-4">
                     <div class="col-3 offset-1">
                         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsociology.nd.edu%2Fassets%2F202818%2Ffullsize%2Fplaceholder_copy_4.png&f=1&nofb=1"
                              class="img-fluid" alt="placeholder image">
@@ -172,7 +171,7 @@
                     </div>
                 </div>
 
-                <div class="row py-3">
+                <div class="row py-4">
                     <div class="col-3 offset-1">
                         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsociology.nd.edu%2Fassets%2F202818%2Ffullsize%2Fplaceholder_copy_4.png&f=1&nofb=1"
                              class="img-fluid" alt="placeholder image">
@@ -191,8 +190,8 @@
         </div>
 
         <div id="collapseThree" class="collapse" aria-labelledby="resume" data-parent="#inner-bubble-text">
-            <div class="card-body background-Gray text-white">
-                <div class="row py-3">
+            <div class="background-Gray text-white">
+                <div class="row py-4">
                     <div class="col-10 offset-1">
                         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
                         3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
@@ -206,7 +205,6 @@
             </div>
         </div>
 
-    </div>
 </div>
 
 <!-- Reference Quotes -->
@@ -231,7 +229,7 @@
 <div class="container-fluid bg-secondary py-5">
     <div class="container bg-white p-5 text-center">
         <h2>Contact Me</h2>
-        <form action="http://localhost" class="text-left" method="post">
+        <form id="contact" action="http://localhost" class="text-left" method="post">
             <div>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" novalidate>
