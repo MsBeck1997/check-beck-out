@@ -111,26 +111,26 @@ div#carouselQuotesSlidesOnly {
 
 /* Colored border below Text */
 h2.border-bottom {
-	padding: 0 0 10px 0;
 	border-bottom: 1px;
 	border-color: #ff9e9e!important;
 }
 
 /* Fixes -whom section spacing */
 h2.border-bottom.font-italic.text-right {
-	padding: 0 15% 3px 0;
+	padding: 0 15% 10px 0;
 }
 
 /* Border around Reference Block */
-.carousel-inner.border.border-secondary.text-center.mt-3.mb-4 {
+.carousel-inner.border.border-secondary.text-center.my-5 {
 	border-width: 3px!important;
 	border-radius: 15px;
-	overflow: none;
 }
 
 /* Fixes transition error */
-.carousel-item {
-	padding: 7em;
+.carousel-item,
+.carousel-item-left {
+	padding: 7em 15em 7em 15em;
+	margin: auto;
 }
 
 /* ------------------------- Contact Form ------------------------- */
