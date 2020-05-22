@@ -102,9 +102,9 @@ h2.border-bottom {
 	border-color: #ff9e9e!important;
 }
 
-/* Moving -whom text over to a good position */
+/* Fixes -whom section spacing */
 h2.border-bottom.font-italic.text-right {
-	padding: 0 15em 0 0;
+	padding: 0 15% 0 0;
 }
 
 /* Border around Reference Block */
@@ -113,6 +113,7 @@ h2.border-bottom.font-italic.text-right {
 	border-radius: 15px;
 }
 
+/* Fixes transition error */
 .carousel-item {
 	padding: 7em;
 }
