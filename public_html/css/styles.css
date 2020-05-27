@@ -158,7 +158,7 @@ textarea {
 }
 
 /* Changes Submit Button */
-input#submit {
+button#submit {
 	background-color: #ff9e9e;
 	border-color: #ff9e9e;
 	outline: 0;
@@ -167,7 +167,7 @@ input#submit {
 }
 
 /* Changes Submit Button on Press */
-input#submit:active {
+button#submit:active {
 	background-color: #ff8080;
 	border-color: #ff8080;
 }
