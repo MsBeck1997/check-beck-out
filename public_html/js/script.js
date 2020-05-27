@@ -21,7 +21,7 @@ $(document).ready(function() {
 
 			message: {
 				required: true,
-				maxLength: 2000
+				maxlength: 2000
 			}
 
 		},

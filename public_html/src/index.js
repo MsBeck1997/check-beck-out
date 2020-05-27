@@ -19,7 +19,7 @@ indexRoute.route('/apis')
 	return response.json("Testing A")
 	})
 	.post((request, response) => {
-		response.append('Access-Control-Allow-Origin', ['*']) // Comment out before PWP is hosted with dockernpm
+		response.append('Access-Control-Allow-Origin', ['*']) // Comment out before PWP is hosted with docker
 		console.log(request.body)
 		return response.json("Is this on?")
 })
