@@ -25,50 +25,58 @@ body {
 	background-size: 100px 100px;
 }
 
-/* ------------------------- Navbar ------------------------- */
-
-/* Adds larger text size and thickness to header */
-.navbar-brand {
-	font-family: 'Playfair Display', serif;
-	font-size: 60px;
-	font-weight: 500;
-}
-
-/* Resizes Icons */
-::before {
-	font-size: 60px;
-}
-
-/* Fixes Navbar Spacing for icons and color */
-.navbar-nav a, a:visited {
-	padding: 0 1em;
-	color: #ff9e9e;
-}
-
-/* Hover Icon Color */
-.navbar-nav a:hover {
-	color: #ff8080;
-}
-
-.navbar-nav {
-	position: relative;
-	left: 88%;
-}
-
 /* ------------------------- Landing Section ------------------------- */
 
 /* Adds small top and bottom border */
-.PolkaDotBackground {
+.container-fluid.PolkaDotBackground.py-5 {
 	border-top: solid 3px #ff9e9e;
-	border-bottom: solid 3px #ff9e9e;
 }
 
-.PolkaDotBackground .row {
+/* Creates box for text to be housed in */
+.container-fluid.PolkaDotBackground.py-5 .row {
 	background-color: rgba(255, 158,158, 90%);
 	border-radius: 15px;
 }
 
+/* ------------------------- Link Line ------------------------- */
+
+/* Resizes Icons and adds colors */
+.fa.fa-linkedin-square:before,
+.fa.fa-github:before{
+	font-size: 40px!important;
+}
+
+a.Icon {
+	color: #ff9e9e!important;
+}
+a.Icon:hover {
+	color: #ff8080!important;
+}
+
+/* Adds a small border at top and bottom */
+nav.navbar.navbar-light.navbar-expand-md.justify-content-md-center.justify-content-start.background-Gray.py-0 {
+	border-top: solid 3px #ff9e9e;
+	border-bottom: solid 3px #ff9e9e;
+	padding: 0 0 0 0;
+}
+
+/* Background color for nav link */
+li.nav-item.mx-3 {
+	background-color: #ff9e9e;
+}
+
+/* Background color for nav link on hover */
+li.nav-item.mx-3 a:hover{
+	background-color: #ff8080;
+}
+
+
 /* ------------------------- Bubble Sections ------------------------- */
+
+/* Changes size of icons */
+div ::before {
+	font-size: 70px;
+}
 
 /* Border color and thickness for Bubbles */
 div .BubbleBorder {
