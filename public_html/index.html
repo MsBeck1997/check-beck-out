@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="As a web developer, I'm proud to showcase my skills in on my personal portfolio page that I created from scratch.">
+
     <title>Check Beck Out!</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,400;1,900&display=swap"
@@ -32,17 +34,14 @@
 </div>
 
 <!-- Link Line -->
-<nav class="navbar navbar-light navbar-expand-md justify-content-md-center justify-content-start background-Gray py-0">
-    <button class="navbar-toggler ml-1" type="button" data-toggle="collapse" data-target="#Navbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse justify-content-between align-items-stretch w-100" id="Navbar">
-        <ul class="navbar-nav mx-auto text-center">
-            <li class="nav-item"><a class="nav-link Icon" href="https://github.com/MsBeck1997" target="_blank"><i class="fa fa-github"></i></a> </li>
-            <li class="nav-item mx-3">
-                <a class="nav-link my-auto" href="#contact"><b>Contact Me</b></a>
+<nav class="navbar navbar-light navbar-expand justify-content-center background-Gray py-0">
+    <div class="navbar justify-content-between align-items-stretch w-100 p-0" id="Navbar">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-3"><a class="nav-link Icon" href="https://github.com/MsBeck1997" rel="noopener" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a> </li>
+            <li class="nav-item NavContact">
+                <a class="nav-link my-auto px-3" href="#contact"><b>Contact Me</b></a>
             </li>
-            <li class="nav-item"><a class="nav-link Icon" href="https://www.linkedin.com/in/checkbeckout/" target="_blank"><i class="fa fa-linkedin-square"></i></a> </li>
+            <li class="nav-item px-3"><a class="nav-link Icon" href="https://www.linkedin.com/in/checkbeckout/" rel="noopener" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> </li>
         </ul>
     </div>
 </nav>
@@ -195,22 +194,22 @@
     <div class="container bg-white p-5 text-center">
             <h2>Contact Me</h2>
 
-        <form id="contact" action="http://localhost:4200/apis" class="text-left" method="post">
+        <form id="contact" action="http://localhost:4200/apis" class="text-left" method="post" novalidate>
             <div>
                 <label for="name">Name:</label>
-                <input type="text" name="name" id="name" novalidate>
+                <input type="text" name="name" id="name">
             </div>
             <div>
                 <label for="email">Email Address:</label>
-                <input type="email" name="email" id="email" novalidate>
+                <input type="email" name="email" id="email">
             </div>
             <div>
                 <label for="phone">Phone Number:</label>
-                <input type="tel" name="phone" id="phone" novalidate>
+                <input type="tel" name="phone" id="phone">
             </div>
             <div>
                 <label for="message">Message:</label>
-                <textarea name="message" id="message" novalidate></textarea>
+                <textarea name="message" id="message"></textarea>
             </div>
             <div class="text-center">
                 <button class="btn text-center" type="submit" name="submit" id="submit">Submit</button>
