@@ -24,18 +24,28 @@ const requestValidation = [
 
 indexRoute.route('/apis')
 	.get((request, response) => {
-	return response.json("Testing A")
+		return response.send(Buffer.from(`<div class="alert alert-danger" role="alert">There was an issue sending your email. ${currentError.msg}</div>`)
 	})
 	.post( requestValidation, (request, response) => {
+		response.append('Access-Control-Allow-Origin', 'text/html')
+		response.append('Access-Control-Allow-Origin', ['*']) // Comment out before PWP is hosted with docker
+		const domain = process.env.MAILGUN_DOMAIN
+		const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: domain});
 
 		const {email, subject, name, message} = request.body
 
 		const mailgunData = {
 			to: process.env.MAIL_RECIPIENT,
 			from: `Mailgun Sandbox <postmaster@${domain}>`,
-			subject: `${name} - ${email}: ${subject}`,
+			subject: `${name} - ${email}`,
 			text: message
 		};
+
+		mg.messages().send(mailgunData, (error) => {
+			if (error) {
+				return response.send(Buffer.from(`<div class="alert alert-danger" role="alert">There was an issue sending your email. This was a problem with the email sender, try again later.</div>`))
+			}
+		})
 
 		const errors = validationResult(request)
 
@@ -44,9 +54,7 @@ indexRoute.route('/apis')
 			return response.json(`Bad Request: Error ${currentError.msg}`)
 		}
 
-		response.append('Access-Control-Allow-Origin', ['*']) // Comment out before PWP is hosted with docker
-		console.log(request.body)
-		return response.json("Is this on?")
+		return response.send(Buffer.from(`<div class='alert alert-success' role='alert'>Email successfully sent.</div>`))
 })
 
 app.use(indexRoute)

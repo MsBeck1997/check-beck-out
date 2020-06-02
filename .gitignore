@@ -2,4 +2,4 @@
 /.idea
 /vendor
 */node_modules
-/src/mailgun.env
+/src/.env
