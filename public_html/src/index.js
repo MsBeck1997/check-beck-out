@@ -27,15 +27,21 @@ indexRoute.route('/apis')
 	return response.json("Testing A")
 	})
 	.post( requestValidation, (request, response) => {
+		const domain = process.env.MAILGUN_DOMAIN
+		const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: domain});
 
 		const {email, subject, name, message} = request.body
 
 		const mailgunData = {
 			to: process.env.MAIL_RECIPIENT,
 			from: `Mailgun Sandbox <postmaster@${domain}>`,
-			subject: `${name} - ${email}: ${subject}`,
+			subject: `${name} - ${email}`,
 			text: message
 		};
+
+		mg.messages().send(mailgunData, (error) => {
+			if (error) {return response.json("error sending email through email handler, please try again later")}
+		})
 
 		const errors = validationResult(request)
 
