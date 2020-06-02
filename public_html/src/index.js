@@ -3,6 +3,7 @@ const express = require('express')
 const morgan = require('morgan')
 const mailgun = require('mailgun-js')
 const bodyParser = require('body-parser')
+const {check, validationResult} = require("express-validator")
 
 // Initializing Express Application
 const app = express()
@@ -14,11 +15,35 @@ app.use(bodyParser.json())
 
 const indexRoute = express.Router()
 
+const requestValidation = [
+	check("email", "A valid email is required".isEmail().normalizeEmail(),
+	check ('name', 'A name is required to send an email').not().isEmpty().trim().escape(),
+	check ('subject').optional().trim().escape(),
+	check('message', 'A message is required to send email.').not().isEmpty().trim().escape().isLength({max:2000}))
+]
+
 indexRoute.route('/apis')
 	.get((request, response) => {
 	return response.json("Testing A")
 	})
-	.post((request, response) => {
+	.post( requestValidation, (request, response) => {
+
+		const {email, subject, name, message} = request.body
+
+		const mailgunData = {
+			to: process.env.MAIL_RECIPIENT,
+			from: `Mailgun Sandbox <postmaster@${domain}>`,
+			subject: `${name} - ${email}: ${subject}`,
+			text: message
+		};
+
+		const errors = validationResult(request)
+
+		if(!errors.isEmpty()) {
+			const currentError = errors.array()[0]
+			return response.json(`Bad Request: Error ${currentError.msg}`)
+		}
+
 		response.append('Access-Control-Allow-Origin', ['*']) // Comment out before PWP is hosted with docker
 		console.log(request.body)
 		return response.json("Is this on?")
