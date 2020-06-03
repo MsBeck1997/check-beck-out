@@ -1,9 +1,9 @@
-require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
 const mailgun = require('mailgun-js')
 const bodyParser = require('body-parser')
 const {check, validationResult} = require("express-validator")
+const Recaptcha = require('express-recaptcha').RecaptchaV2
 
 // Initializing Express Application
 const app = express()
@@ -13,6 +13,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json())
 
+const recaptcha = new Recaptcha(process.env.RECAPTCHA_SITE_KEY, process.env.RECAPTCHA_SECRET_KEY)
 const indexRoute = express.Router()
 
 const requestValidation = [
@@ -24,38 +25,42 @@ const requestValidation = [
 
 indexRoute.route('/apis')
 	.get((request, response) => {
-		return response.send(Buffer.from(`<div class="alert alert-danger" role="alert">There was an issue sending your email. ${currentError.msg}</div>`)
-	})
-	.post( requestValidation, (request, response) => {
-		response.append('Access-Control-Allow-Origin', 'text/html')
-		response.append('Access-Control-Allow-Origin', ['*']) // Comment out before PWP is hosted with docker
-		const domain = process.env.MAILGUN_DOMAIN
-		const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: domain});
+		return response.json("Is this thing on?")
+	}).post(recaptcha.middleware.verify, requestValidation, (request, response) => {
 
-		const {email, subject, name, message} = request.body
+	response.append('Content-Type', 'text/html')
 
-		const mailgunData = {
-			to: process.env.MAIL_RECIPIENT,
-			from: `Mailgun Sandbox <postmaster@${domain}>`,
-			subject: `${name} - ${email}`,
-			text: message
-		};
+	if (request.recaptcha.error) {
+		return response.send(`<div class='alert alert-danger' role='alert'>There was an error with Recaptcha. Please try again later.</div>`)
+	}
 
-		mg.messages().send(mailgunData, (error) => {
-			if (error) {
-				return response.send(Buffer.from(`<div class="alert alert-danger" role="alert">There was an issue sending your email. This was a problem with the email sender, try again later.</div>`))
-			}
-		})
+	const errors = validationResult(request)
 
-		const errors = validationResult(request)
+	if (!errors.isEmpty()) {
+		const currentError = errors.array()[0]
+		return response.send(Buffer.from(`<div class='alert alert-danger' role='alert'>${currentError.msg}</div>`))
+	}
 
-		if(!errors.isEmpty()) {
-			const currentError = errors.array()[0]
-			return response.json(`Bad Request: Error ${currentError.msg}`)
+	const domain = process.env.MAILGUN_DOMAIN
+	const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: domain});
+	const {email, subject, name, message} = request.body
+
+	const mailgunData = {
+		to: process.env.MAIL_RECIPIENT,
+		from: `Mailgun Sandbox <postmaster@${domain}>`,
+		subject: `${name} - ${email}: ${subject}`,
+		text: message
+	}
+
+	mg.messages().send(mailgunData, (error) => {
+		if (error) {
+			return response.send(Buffer.from(`<div class='alert alert-danger' role='alert'>Unable to send email error with email sender, please try again later.</div>`))
 		}
+	})
 
-		return response.send(Buffer.from(`<div class='alert alert-success' role='alert'>Email successfully sent.</div>`))
+	return response.send(Buffer.from("<div class='alert alert-success' role='alert'>Email successfully sent.</div>"))
 })
 
 app.use(indexRoute)
-app.listen(4200,() => {console.log("The server has started")} )
+
+app.listen(4200, () => {console.log("The server has started")})

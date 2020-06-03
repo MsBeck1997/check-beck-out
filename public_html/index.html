@@ -195,7 +195,7 @@
     <div class="container bg-white p-5 text-center">
             <h2>Contact Me</h2>
 
-        <form id="contact" action="http://localhost:4200/apis" class="text-left" method="post" novalidate>
+        <form id="contact" action="./apis/" class="text-left" method="post" novalidate>
             <div>
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name">
@@ -215,6 +215,7 @@
             <div class="text-center">
                 <button class="btn text-center" type="submit" name="submit" id="submit">Submit</button>
             </div>
+            <div class="g-recaptcha" data-sitekey="6Le9AwAVAAAAACqzc1TFa0Lu6UJn_u0twUs7vjpF"></div>
         </form>
         <div id="output-area"></div>
     </div>
@@ -244,6 +245,9 @@
 <script crossorigin="anonymous"
         integrity="sha256-0Yg/eibVdKyxkuVo1Qwh0DspoUCHvSbm/oOoYVz32BQ="
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.min.js"></script>
+
+<!-- Google reCAPTCHA -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <script src="js/script.js"></script>
 
