@@ -117,6 +117,7 @@ button.btn[aria-expanded="true"]:hover .BubbleBorder {
 }
 
 /* ------------------------- Reference Quotes ------------------------- */
+
 div#carouselQuotesSlidesOnly {
 	margin: 0 5em;
 }
@@ -178,7 +179,7 @@ button#submit {
 }
 
 /* Changes Submit Button on Press */
-button#submit:active {
+button#submit:hover {
 	background-color: #ff8080;
 	border-color: #ff8080;
 }
