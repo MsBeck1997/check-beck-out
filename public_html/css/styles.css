@@ -33,7 +33,7 @@ body {
 }
 
 /* Creates box for text to be housed in */
-.container-fluid.PolkaDotBackground.py-5 .row {
+.container-fluid.PolkaDotBackground.py-5 .container.p-5 {
 	background-color: rgba(255, 158,158, 90%);
 	border-radius: 15px;
 }
@@ -116,10 +116,12 @@ button.btn[aria-expanded="true"]:hover .BubbleBorder {
 	border-color: #ff8080!important;
 }
 
+#collapseOne a,
 #collapseTwo a {
 	color: #ff9e9e!important;
 }
 
+#collapseOne a:hover,
 #collapseTwo a:hover {
 	color: #ff8080!important;
 }
