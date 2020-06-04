@@ -116,6 +116,14 @@ button.btn[aria-expanded="true"]:hover .BubbleBorder {
 	border-color: #ff8080!important;
 }
 
+#collapseTwo a {
+	color: #ff9e9e!important;
+}
+
+#collapseTwo a:hover {
+	color: #ff8080!important;
+}
+
 /* ------------------------- Reference Quotes ------------------------- */
 
 div#carouselQuotesSlidesOnly {
