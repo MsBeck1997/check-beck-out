@@ -34,14 +34,14 @@ indexRoute.route('/apis')
 	// response.append('Content-Type', 'text/html')
 
 	if (request.recaptcha.error) {
-		return response.send(`<div class='alert alert-danger' role='alert'>There was an error with Recaptcha, try again later.</div>`)
+		return response.send(`<div class='alert alert-danger m-3' role='alert'>There was an error with Recaptcha, try again later.</div>`)
 	}
 
 	const errors = validationResult(request)
 
 	if (!errors.isEmpty()) {
 		const currentError = errors.array()[0]
-		return response.send(Buffer.from(`<div class='alert alert-danger' role='alert'>${currentError.msg}</div>`))
+		return response.send(Buffer.from(`<div class='alert alert-danger m-3' role='alert'>${currentError.msg}</div>`))
 	}
 
 	const domain = process.env.MAILGUN_DOMAIN
@@ -57,11 +57,11 @@ indexRoute.route('/apis')
 
 	mg.messages().send(mailgunData, (error) => {
 		if (error) {
-			return response.send(Buffer.from(`<div class='alert alert-danger' role='alert'>Unable to send email error with email sender, try again later.</div>`))
+			return response.send(Buffer.from(`<div class='alert alert-danger m-3' role='alert'>Unable to send email error with email sender, try again later.</div>`))
 		}
 	})
 
-	return response.send(Buffer.from("<div class='alert alert-success' role='alert'>Email successfully sent.</div>"))
+	return response.send(Buffer.from("<div class='alert alert-success m-3' role='alert'>Email successfully sent.</div>"))
 })
 
 app.use(indexRoute)

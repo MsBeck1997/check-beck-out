@@ -116,6 +116,15 @@ button.btn[aria-expanded="true"]:hover .BubbleBorder {
 	border-color: #ff8080!important;
 }
 
+/* Changes color of links in collapseTwo */
+#inner-bubble-text a {
+	color: #ff9e9e!important;
+}
+
+#inner-bubble-text a:hover {
+	color: #ff8080!important;
+}
+
 /* ------------------------- Reference Quotes ------------------------- */
 
 div#carouselQuotesSlidesOnly {
