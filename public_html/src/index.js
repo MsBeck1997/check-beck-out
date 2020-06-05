@@ -18,7 +18,7 @@ const indexRoute = express.Router()
 const requestValidation = [
 	check("email", "A Valid Email is required").isEmail().normalizeEmail(),
 	check('name', "A name is required to send an email").not().isEmpty().trim().escape(),
-	check('subject').optional().trim().escape(),
+	check('phone').optional().trim().escape(),
 	check('message', 'A message is required to send email').not().isEmpty().trim().escape().isLength({max: 2000})
 
 ]
@@ -46,22 +46,22 @@ indexRoute.route('/apis')
 
 	const domain = process.env.MAILGUN_DOMAIN
 	const mg = mailgun({apiKey: process.env.MAILGUN_API_KEY, domain: domain});
-	const {email, subject, name, message} = request.body
+	const {email, phone, name, message} = request.body
 
 	const mailgunData = {
 		to: process.env.MAIL_RECIPIENT,
 		from: `Mailgun Sandbox <postmaster@${domain}>`,
-		subject: `${name} - ${email}: ${subject}`,
+		subject: `${name} - ${phone}, ${email}`,
 		text: message
 	}
 
 	mg.messages().send(mailgunData, (error) => {
 		if (error) {
+			console.log(error)
 			return response.send(Buffer.from(`<div class='alert alert-danger m-3' role='alert'>Unable to send email error with email sender, try again later.</div>`))
 		}
+		return response.send(Buffer.from("<div class='alert alert-success m-3' role='alert'>Email successfully sent.</div>"))
 	})
-
-	return response.send(Buffer.from("<div class='alert alert-success m-3' role='alert'>Email successfully sent.</div>"))
 })
 
 app.use(indexRoute)
