@@ -144,7 +144,7 @@ h2.border-bottom.font-italic.text-right {
 }
 
 /* Border around Reference Block */
-.carousel-inner.border.border-secondary.text-center.mb-5 {
+.carousel-inner.border.border-secondary.text-center.my-5 {
 	border-width: 3px!important;
 	border-radius: 15px;
 }
