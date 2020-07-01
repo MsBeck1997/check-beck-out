@@ -16,10 +16,24 @@ const recaptcha = new Recaptcha(process.env.RECAPTCHA_SITE_KEY, process.env.RECA
 const indexRoute = express.Router()
 
 const requestValidation = [
-	check("email", "A Valid Email is required").isEmail().normalizeEmail(),
-	check('name', "A name is required to send an email").not().isEmpty().trim().escape(),
-	check('phone').optional().trim().escape(),
-	check('message', 'A message is required to send email').not().isEmpty().trim().escape().isLength({max: 2000})
+	check("email", "A Valid Email is required")
+		.isEmail()
+		.normalizeEmail(),
+	check('name', "A name is required to send an email")
+		.not()
+		.isEmpty()
+		.trim()
+		.escape(),
+	check('phone')
+		.optional()
+		.trim()
+		.escape(),
+	check('message', 'A message is required to send email')
+		.not()
+		.isEmpty()
+		.trim()
+		.escape()
+		.isLength({max: 2000})
 
 ]
 
